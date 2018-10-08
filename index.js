@@ -57,7 +57,7 @@ app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/auth/google' }),
   (req, res) => res.redirect(`${mobileappName}://login?user=` + JSON.stringify(req.user)));
 
-const server = https.createServer(httpsOptions, app).listen(3000, () => {
+const server = https.createServer(httpsOptions, app).listen(443, () => {
   const { address, port } = server.address();
   console.log(`Running at https://${address}:${port}`);
 });
