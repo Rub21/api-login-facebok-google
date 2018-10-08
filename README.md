@@ -15,7 +15,7 @@ cert.pem
 keytmp.pem
 ```
 
-- Star running the App:
+- Running the App:
 
 ```
 npm start
