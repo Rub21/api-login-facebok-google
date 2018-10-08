@@ -20,3 +20,5 @@ keytmp.pem
 ```
 npm start
 ```
+
+Make a copy of `config.example.js` -> `config.js` and set the credential's application.
