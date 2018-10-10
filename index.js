@@ -5,10 +5,10 @@ import GoogleStrategy from 'passport-google-oauth20';
 import fs from 'fs';
 import https from 'https';
 import { facebook, google } from './config';
-const httpsOptions = {
-  key: fs.readFileSync('./key.pem'),
-  cert: fs.readFileSync('./cert.pem')
-}
+// const httpsOptions = {
+//   key: fs.readFileSync('./key.pem'),
+//   cert: fs.readFileSync('./cert.pem')
+// }
 const mobileappName = 'OAuthLogin'
 const transformFacebookProfile = (profile) => ({
   name: profile.name,
@@ -56,8 +56,8 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }))
 app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/auth/google' }),
   (req, res) => res.redirect(`${mobileappName}://login?user=` + JSON.stringify(req.user)));
-
-const server = https.createServer(httpsOptions, app).listen(443, () => {
+  // https.createServer(httpsOptions, app).
+const server = app.listen(3000, () => {
   const { address, port } = server.address();
   console.log(`Running at https://${address}:${port}`);
 });
