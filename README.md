@@ -22,3 +22,5 @@ npm start
 ```
 
 Make a copy of `config.example.js` -> `config.js` and set the credential's application.
+
+To setup it in EC2 👉https://blog.cloudboost.io/setting-up-an-https-sever-with-node-amazon-ec2-nginx-and-lets-encrypt-46f869159469
